@@ -10,6 +10,7 @@ This document states what I have been learning and practicing during the first 1
 | Day | Topic | Status |
 |-----|-------|--------|
 | 1 | How the web works, Git, setup | ✅ |
+| 2 | HTML | ✅ |
 
 ## Structure
 - `docs/` — written notes and reports
