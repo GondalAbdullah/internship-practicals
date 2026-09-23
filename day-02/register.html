@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact Info — Abdullah Ahmed</title>
-  <meta name="description" content="Personal site built during the Technier internship, Day 2.">
+  <title>Register — Abdullah Ahmed</title>
+  <meta name="description" content="Create an account on Abdullah Ahmed's site.">
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 </head>
 <body>
@@ -14,182 +14,82 @@
     <p><a href="index.html">Abdullah Ahmed</a></p>
     <nav aria-label="Primary">
       <ul>
-        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="register.html">Register</a></li>
+        <li><a href="register.html" aria-current="page">Register</a></li>
       </ul>
     </nav>
   </header>
 
   <main id="main">
+    <h1>Create an account</h1>
+    <p>All fields are required unless marked optional.</p>
 
-    <form action="/register" method="post" enctype="multipart/form-data">
+    <form action="/register" method="post">
+      <fieldset>
+        <legend>Account</legend>
+        <div>
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="full_name" autocomplete="name" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" autocomplete="new-password"
+                 required minlength="8" aria-describedby="password-hint">
+          <p id="password-hint">At least 8 characters.</p>
+        </div>
+      </fieldset>
 
-  <p>Fields marked <span aria-hidden="true">*</span> (required) must be filled in.</p>
+      <fieldset>
+        <legend>About you</legend>
+        <div>
+          <label for="phone">Mobile number</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel"
+                 required pattern="03[0-9]{9}" aria-describedby="phone-hint">
+          <p id="phone-hint">11 digits starting with 03, e.g. 03001234567.</p>
+        </div>
+        <div>
+          <label for="dob">Date of birth</label>
+          <input type="date" id="dob" name="date_of_birth" autocomplete="bday" required>
+        </div>
+        <div>
+          <label for="years">Years of experience (optional)</label>
+          <input type="number" id="years" name="years_experience" min="0" max="40">
+        </div>
+        <div>
+          <label for="github">GitHub URL (optional)</label>
+          <input type="url" id="github" name="github_url" autocomplete="url">
+        </div>
+      </fieldset>
 
-  <fieldset>
-    <legend>Account details</legend>
+      <fieldset>
+        <legend>Experience level</legend>
+        <div>
+          <input type="radio" id="student" name="level" value="student" required>
+          <label for="student">Student</label>
+        </div>
+        <div>
+          <input type="radio" id="graduate" name="level" value="graduate">
+          <label for="graduate">Recent graduate</label>
+        </div>
+        <div>
+          <input type="radio" id="professional" name="level" value="professional">
+          <label for="professional">Working professional</label>
+        </div>
+      </fieldset>
 
-    <div>
-      <label for="full-name">Full name *</label>
-      <input type="text" id="full-name" name="full_name"
-             autocomplete="name" required minlength="2" maxlength="80">
-    </div>
-
-    <div>
-      <label for="email">Email *</label>
-      <input type="email" id="email" name="email" autocomplete="email" required>
-    </div>
-
-    <div>
-      <label for="username">Username *</label>
-      <input type="text" id="username" name="username" autocomplete="username"
-             required pattern="[a-z0-9_]{3,20}" aria-describedby="username-hint">
-      <p id="username-hint">3–20 characters: lowercase letters, numbers and underscores.</p>
-    </div>
-
-    <div>
-      <label for="password">Password *</label>
-      <input type="password" id="password" name="password"
-             autocomplete="new-password" required minlength="8"
-             aria-describedby="password-hint">
-      <p id="password-hint">At least 8 characters.</p>
-    </div>
-  </fieldset>
-
-  <fieldset>
-    <legend>Personal details</legend>
-
-    <div>
-      <label for="phone">Mobile number</label>
-      <input type="tel" id="phone" name="phone" autocomplete="tel"
-             pattern="03[0-9]{9}" aria-describedby="phone-hint">
-      <p id="phone-hint">11 digits, starting with 03, e.g. 03001234567.</p>
-    </div>
-
-    <div>
-      <label for="dob">Date of birth</label>
-      <input type="date" id="dob" name="date_of_birth" autocomplete="bday"
-             min="1950-01-01" max="2008-12-31">
-    </div>
-
-    <div>
-      <label for="city">City</label>
-      <select id="city" name="city" autocomplete="address-level2">
-        <option value="">Choose a city</option>
-        <optgroup label="Punjab">
-          <option value="lahore">Lahore</option>
-          <option value="rawalpindi">Rawalpindi</option>
-          <option value="faisalabad">Faisalabad</option>
-        </optgroup>
-        <optgroup label="Sindh">
-          <option value="karachi">Karachi</option>
-          <option value="hyderabad">Hyderabad</option>
-        </optgroup>
-        <optgroup label="Islamabad Capital Territory">
-          <option value="islamabad">Islamabad</option>
-        </optgroup>
-      </select>
-    </div>
-
-    <div>
-      <label for="website">Portfolio or GitHub URL</label>
-      <input type="url" id="website" name="website" autocomplete="url"
-             placeholder="https://github.com/yourname">
-    </div>
-
-    <div>
-      <label for="avatar">Profile photo</label>
-      <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
-    </div>
-  </fieldset>
-
-  <fieldset>
-    <legend>Experience</legend>
-
-    <fieldset>
-      <legend>Experience level *</legend>
       <div>
-        <input type="radio" id="level-student" name="level" value="student" required>
-        <label for="level-student">Student</label>
+        <input type="checkbox" id="terms" name="accepted_terms" value="yes" required>
+        <label for="terms">I agree to the terms of service</label>
       </div>
-      <div>
-        <input type="radio" id="level-graduate" name="level" value="graduate">
-        <label for="level-graduate">Recent graduate</label>
-      </div>
-      <div>
-        <input type="radio" id="level-professional" name="level" value="professional">
-        <label for="level-professional">Working professional</label>
-      </div>
-    </fieldset>
 
-    <div>
-      <label for="years">Years of experience</label>
-      <input type="number" id="years" name="years_experience" min="0" max="40" step="1">
-    </div>
-
-    <div>
-      <label for="language">Main programming language</label>
-      <input type="text" id="language" name="main_language" list="languages">
-      <datalist id="languages">
-        <option value="Python"></option>
-        <option value="JavaScript"></option>
-        <option value="Java"></option>
-        <option value="C#"></option>
-        <option value="Go"></option>
-      </datalist>
-    </div>
-
-    <div>
-      <label for="confidence">Confidence with HTML (1 = low, 10 = high)</label>
-      <input type="range" id="confidence" name="html_confidence" min="1" max="10" step="1" value="5">
-    </div>
-
-    <div>
-      <label for="bio">Short bio</label>
-      <textarea id="bio" name="bio" rows="5" maxlength="500"
-                aria-describedby="bio-hint"></textarea>
-      <p id="bio-hint">Up to 500 characters.</p>
-    </div>
-  </fieldset>
-
-  <fieldset>
-    <legend>Preferences</legend>
-
-    <div>
-      <label for="theme-colour">Favourite colour for your profile</label>
-      <input type="color" id="theme-colour" name="theme_colour" value="#1a73e8">
-    </div>
-
-    <fieldset>
-      <legend>Topics you're interested in</legend>
-      <div>
-        <input type="checkbox" id="topic-frontend" name="topics" value="frontend">
-        <label for="topic-frontend">Frontend</label>
-      </div>
-      <div>
-        <input type="checkbox" id="topic-backend" name="topics" value="backend">
-        <label for="topic-backend">Backend</label>
-      </div>
-      <div>
-        <input type="checkbox" id="topic-data" name="topics" value="data">
-        <label for="topic-data">Data engineering</label>
-      </div>
-    </fieldset>
-
-    <div>
-      <input type="checkbox" id="terms" name="accepted_terms" value="yes" required>
-      <label for="terms">I agree to the terms of service *</label>
-    </div>
-  </fieldset>
-
-  <input type="hidden" name="signup_source" value="handbook-day-2">
-
-  <button type="submit">Create account</button>
-  <button type="reset">Clear form</button>
-</form>
-
+      <button type="submit">Create account</button>
+    </form>
   </main>
 
   <footer>
