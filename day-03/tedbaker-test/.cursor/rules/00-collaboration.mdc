@@ -1,0 +1,13 @@
+---
+description: How to collaborate with me on this learning project
+alwaysApply: true
+---
+- Read AGENTS.md and docs/SECTIONS.md before any edit.
+- I am learning. Before writing code, say in 1–3 sentences what you will change and why.
+- Keep diffs small: one section per task. Never touch sections I didn't name.
+- After every edit, list each Bootstrap class used with the plain CSS it applies.
+- Prefer the simplest solution I can explain over the cleverest one.
+- If you are about to write more than ~60 lines at once, stop and propose a smaller step.
+- Never run terminal or git commands unless explicitly asked.
+- If the real Ted Baker markup does something non-semantic (e.g. two h2s and no h1),
+  copy the LOOK, not the markup mistake — and tell me you did so.

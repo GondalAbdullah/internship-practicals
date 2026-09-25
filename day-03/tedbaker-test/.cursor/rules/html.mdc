@@ -1,0 +1,20 @@
+---
+description: Semantic and accessible HTML rules (handbook Day 2)
+globs: "**/*.html"
+alwaysApply: false
+---
+- Landmarks: one <header>, <nav> for navigation, one <main id="main-content">, <footer>.
+  Include a "Skip to content" link as the first focusable element.
+- Exactly one <h1> (the hero headline). Never skip heading levels. Choose levels by
+  structure, never by font size.
+- Links (<a href>) navigate; buttons (<button type="button">) act. Wishlist, search
+  toggle, menu toggle and carousel controls are buttons. Product names are links.
+- Every <img> has alt: describe purpose for meaningful images, alt="" for decorative ones.
+- Mobile/desktop image pairs use <picture> with <source media="(min-width: …)">.
+  Add width/height attributes to reduce layout shift; loading="lazy" below the fold only.
+- Videos: <video autoplay muted loop playsinline poster="…">.
+- Each product card is an <article>. Lists of links are <ul>/<li>.
+- Forms: every input has an associated <label> (visually-hidden is fine); placeholder
+  is never a label; email input uses type="email", name, and autocomplete="email".
+- div/span only when no semantic element fits. Icon-only buttons need an aria-label.
+- No ARIA where a native element already does the job.
