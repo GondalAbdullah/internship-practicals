@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ted Baker London (Clone) — Friends &amp; Family Event, 25% Off Sitewide</title>
+  <meta name="description" content="Learning exercise: a static clone of the Ted Baker homepage built for a Technier internship assessment. Not affiliated with Ted Baker." />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Google Fonts: closest match to the real site's serif display + clean sans nav -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@400;500;600&family=Yellowtail&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 CSS (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <!-- Bootstrap Icons (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Design tokens, then custom styles -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- === Section: Announcement bar === -->
+  <div class="announcement-bar">
+    <a href="#">25% OFF SITEWIDE | SHOP NOW</a>
+  </div>
+
+  <header class="site-header">
+    <div class="header-row">
+      <button type="button" class="icon-btn header-search-toggle" data-bs-toggle="collapse" data-bs-target="#searchBar" aria-expanded="false" aria-controls="searchBar" aria-label="Search">
+        <i class="bi bi-search" aria-hidden="true"></i>
+      </button>
+
+      <a class="site-logo" href="/">
+        <img src="assets/logo.svg" width="130" height="31" alt="Ted Baker London — home" />
+      </a>
+
+      <div class="header-icons">
+        <a class="icon-btn" href="#" aria-label="Wishlist">
+          <i class="bi bi-heart" aria-hidden="true"></i>
+        </a>
+        <a class="icon-btn" href="#" aria-label="Account">
+          <i class="bi bi-person" aria-hidden="true"></i>
+        </a>
+        <a class="icon-btn" href="#" aria-label="Cart, 0 items">
+          <i class="bi bi-bag" aria-hidden="true"></i>
+        </a>
+        <button type="button" class="icon-btn nav-toggle" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Open menu">
+          <i class="bi bi-list" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Static search bar, expands via Bootstrap collapse (no custom JS) -->
+    <div class="collapse header-search-bar" id="searchBar">
+      <form class="search-form" role="search" action="#" onsubmit="return false;">
+        <label for="siteSearch" class="visually-hidden">What are you looking for today?</label>
+        <input type="search" id="siteSearch" name="q" placeholder="What are you looking for today?" />
+        <button type="submit" aria-label="Submit search">
+          <i class="bi bi-search" aria-hidden="true"></i>
+        </button>
+      </form>
+    </div>
+
+    <!-- Desktop nav with one mega-menu (Women) -->
+    <nav class="main-nav d-none d-lg-block" aria-label="Primary">
+      <ul>
+        <li class="nav-item-mega">
+          <a href="#" class="nav-link-btn" aria-haspopup="true">Women</a>
+          <div class="mega-menu">
+            <div class="mega-menu-col">
+              <h2>New</h2>
+              <ul>
+                <li><a href="#">New In</a></li>
+                <li><a href="#">Wardrobe Essentials</a></li>
+                <li><a href="#">Vacation Shop</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu-col">
+              <h2>Clothing</h2>
+              <ul>
+                <li><a href="#">Dresses</a></li>
+                <li><a href="#">Coats &amp; Jackets</a></li>
+                <li><a href="#">Sweaters</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu-col">
+              <h2>Bags &amp; Accessories</h2>
+              <ul>
+                <li><a href="#">Bags</a></li>
+                <li><a href="#">Jewelry</a></li>
+                <li><a href="#">Belts</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu-col">
+              <h2>Shoes</h2>
+              <ul>
+                <li><a href="#">Heels</a></li>
+                <li><a href="#">Sandals</a></li>
+                <li><a href="#">Sneakers</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu-col">
+              <h2>Collections</h2>
+              <ul>
+                <li><a href="#">Occasionwear</a></li>
+                <li><a href="#">Workwear</a></li>
+                <li><a href="#">Print Collection</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li><a href="#">Men</a></li>
+        <li><a href="#">Gifts</a></li>
+        <li><a class="nav-sale" href="#">Sale</a></li>
+        <li><a class="nav-sale" href="#">Outlet</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Offcanvas nav for mobile / tablet (<992px) -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+    <div class="offcanvas-header">
+      <h2 class="offcanvas-title" id="mobileNavLabel">Menu</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close menu"></button>
+    </div>
+    <div class="offcanvas-body">
+      <nav aria-label="Primary">
+        <ul class="offcanvas-nav">
+          <li><a href="#">Women</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Gifts</a></li>
+          <li><a class="nav-sale" href="#">Sale</a></li>
+          <li><a class="nav-sale" href="#">Outlet</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <!-- === Section: Hero === -->
+    <section class="hero" aria-label="Friends and Family Event, 25% off sitewide">
+      <picture>
+        <source media="(min-width: 768px)" srcset="https://www.tedbaker.com/cdn/shop/files/D-Hero-26-09-17.jpg?v=1789471225&width=1600" />
+        <img src="https://www.tedbaker.com/cdn/shop/files/M-Hero-26-09-17-copy.jpg?v=1789471226&width=800" alt="" width="800" height="1000" loading="eager" class="hero-img" />
+      </picture>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Friends &amp; Family Event</p>
+        <h1>25% Off Sitewide</h1>
+        <p class="hero-subtext">Automatically applied at checkout.</p>
+        <div class="hero-ctas">
+          <a class="hero-cta" href="#">Women's New Arrivals</a>
+          <a class="hero-cta" href="#">Women's Sale &amp; Outlet</a>
+          <a class="hero-cta" href="#">Men's New Arrivals</a>
+          <a class="hero-cta" href="#">Men's Sale &amp; Outlet</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- === Section: Campaign banner === -->
+    <section class="campaign">
+      <div class="campaign-intro">
+        <h2 class="campaign-script">In Good Company</h2>
+        <p class="campaign-copy">
+          This season is a love letter to our home city and the people who make it. Discover
+          autumn-ready pieces designed for real life, wherever your London takes you.
+        </p>
+      </div>
+      <picture>
+        <source media="(min-width: 768px)" srcset="https://www.tedbaker.com/cdn/shop/files/D-UK-26-09-02-Logo.jpg?v=1788254416&width=1600" />
+        <img src="https://www.tedbaker.com/cdn/shop/files/M-UK-26-09-02-Logo.jpg?v=1788254424&width=800" alt="A man walks through a London park surrounded by pigeons, wearing a maroon shirt and dark trousers." width="800" height="1000" loading="lazy" class="campaign-img" />
+      </picture>
+    </section>
+
+    <!-- === Section: Video tiles === -->
+    <section class="video-tiles" aria-label="Featured campaign videos">
+      <div class="video-tile">
+        <video autoplay muted loop playsinline poster="https://www.tedbaker.com/cdn/shop/files/preview_images/12b1efde999841519b810d64d56c3ddd.thumbnail.0000000000_600x.jpg?v=1788251503">
+          <source src="https://www.tedbaker.com/cdn/shop/videos/c/vp/12b1efde999841519b810d64d56c3ddd/12b1efde999841519b810d64d56c3ddd.HD-1080p-7.2Mbps-93155909.mp4?v=0" type="video/mp4" />
+        </video>
+      </div>
+      <div class="video-tile">
+        <video autoplay muted loop playsinline poster="https://www.tedbaker.com/cdn/shop/files/preview_images/f90b06051854428689a1602101920b2b.thumbnail.0000000000_600x.jpg?v=1788343551">
+          <source src="https://www.tedbaker.com/cdn/shop/videos/c/vp/f90b06051854428689a1602101920b2b/f90b06051854428689a1602101920b2b.HD-720p-4.5Mbps-93272097.mp4?v=0" type="video/mp4" />
+        </video>
+      </div>
+    </section>
+
+    <!-- === Section: New arrivals carousel === -->
+    <section class="carousel-section" aria-labelledby="new-arrivals-heading">
+      <h2 id="new-arrivals-heading">25% Off New Arrivals</h2>
+
+      <div class="product-carousel-wrap" role="group" aria-label="New arrivals, scroll for more">
+        <ul class="product-carousel">
+
+          <li>
+            <article class="product-card">
+              <div class="product-media">
+                <span class="badge-new">New In</span>
+                <button type="button" class="wishlist-btn" aria-label="Add ONEIDA to wishlist">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <a href="#">
+                  <img src="https://www.tedbaker.com/cdn/shop/files/ONEIDA.jpg?v=1788424896&width=600" alt="ONEIDA mock neck midi dress with faux leather skirt" width="600" height="750" loading="lazy" />
+                </a>
+              </div>
+              <a class="product-name" href="#">Oneida</a>
+              <p class="product-desc">Mock Neck Midi Dress with Faux Leather Skirt</p>
+              <p class="product-price">$395.00</p>
+            </article>
+          </li>
+
+          <li>
+            <article class="product-card">
+              <div class="product-media">
+                <span class="badge-new">New In</span>
+                <button type="button" class="wishlist-btn" aria-label="Add RIYOZE to wishlist">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <a href="#">
+                  <img src="https://www.tedbaker.com/cdn/shop/files/276436_BLACK_1_2f054981-c690-4b52-92c2-501b922dea12.jpg?width=600" alt="RIYOZE wrap front cropped leather jacket" width="600" height="750" loading="lazy" />
+                </a>
+              </div>
+              <a class="product-name" href="#">Riyoze</a>
+              <p class="product-desc">Wrap Front Cropped Leather Jacket</p>
+              <p class="product-price">$595.00</p>
+            </article>
+          </li>
+
+          <li>
+            <article class="product-card">
+              <div class="product-media">
+                <span class="badge-new">New In</span>
+                <button type="button" class="wishlist-btn" aria-label="Add VALENTINA to wishlist">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <a href="#">
+                  <img src="https://www.tedbaker.com/cdn/shop/files/2026731_RICHBLACK_C4.jpg?width=600" alt="VALENTINA tailored drop waist buttoned mini dress" width="600" height="750" loading="lazy" />
+                </a>
+              </div>
+              <a class="product-name" href="#">Valentina</a>
+              <p class="product-desc">Tailored Drop Waist Buttoned Mini Dress</p>
+              <p class="product-price">$275.00</p>
+            </article>
+          </li>
+
+          <li>
+            <article class="product-card">
+              <div class="product-media">
+                <button type="button" class="wishlist-btn" aria-label="Add ROSE to wishlist">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <a href="#">
+                  <img src="https://www.tedbaker.com/cdn/shop/files/282071_CAMEL_2_d823a091-dc0c-4224-bb94-9a75d8544607.jpg?width=600" alt="ROSE midi length belted wool wrap coat" width="600" height="750" loading="lazy" />
+                </a>
+              </div>
+              <a class="product-name" href="#">Rose</a>
+              <p class="product-desc">Midi Length Belted Wool Wrap Coat</p>
+              <p class="product-price">$575.00</p>
+            </article>
+          </li>
+
+          <li>
+            <article class="product-card">
+              <div class="product-media">
+                <button type="button" class="wishlist-btn" aria-label="Add CHARLIE to wishlist">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <a href="#">
+                  <img src="https://www.tedbaker.com/cdn/shop/files/2036971_078_LT-HTHR-GREY_C2.jpg?width=600" alt="CHARLIE linen checked tie waist shirt dress" width="600" height="750" loading="lazy" />
+                </a>
+              </div>
+              <a class="product-name" href="#">Charlie</a>
+              <p class="product-desc">Linen Checked Tie Waist Shirt Dress</p>
+              <p class="product-price">$325.00</p>
+            </article>
+          </li>
+
+          <li>
+            <article class="product-card">
+              <div class="product-media">
+                <button type="button" class="wishlist-btn" aria-label="Add HAMELS to wishlist">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <a href="#">
+                  <img src="https://www.tedbaker.com/cdn/shop/files/285139_DK-BROWN_1.jpg?width=600" alt="HAMELS short sleeve cotton polo shirt" width="600" height="750" loading="lazy" />
+                </a>
+              </div>
+              <a class="product-name" href="#">Hamels</a>
+              <p class="product-desc">Short Sleeve Cotton Polo Shirt</p>
+              <p class="product-price">$195.00</p>
+            </article>
+          </li>
+
+          <li>
+            <article class="product-card">
+              <div class="product-media">
+                <button type="button" class="wishlist-btn" aria-label="Add ANTWRP to wishlist">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <a href="#">
+                  <img src="https://www.tedbaker.com/cdn/shop/files/286016_MAROON_1.jpg?width=600" alt="ANTWRP double faced wool blend Harrington jacket" width="600" height="750" loading="lazy" />
+                </a>
+              </div>
+              <a class="product-name" href="#">Antwrp</a>
+              <p class="product-desc">Double Faced Wool Blend Harrington Jacket</p>
+              <p class="product-price">$395.00</p>
+            </article>
+          </li>
+
+          <li>
+            <article class="product-card">
+              <div class="product-media">
+                <button type="button" class="wishlist-btn" aria-label="Add DEMARIO to wishlist">
+                  <i class="bi bi-heart" aria-hidden="true"></i>
+                </button>
+                <a href="#">
+                  <img src="https://www.tedbaker.com/cdn/shop/files/282175_BLUE_1.jpg?width=600" alt="DEMARIO relaxed fit wool rich knit jumper" width="600" height="750" loading="lazy" />
+                </a>
+              </div>
+              <a class="product-name" href="#">Demario</a>
+              <p class="product-desc">Relaxed Fit Wool Rich Knit Jumper</p>
+              <p class="product-price">$235.00</p>
+            </article>
+          </li>
+
+        </ul>
+      </div>
+
+      <a class="shop-all" href="#">Shop All</a>
+    </section>
+
+    <!-- === Section: Workwear tiles === -->
+    <section class="workwear-tiles" aria-label="Workwear collections for women and men">
+      <a class="workwear-tile" href="#">
+        <picture>
+          <source media="(min-width: 768px)" srcset="https://www.tedbaker.com/cdn/shop/files/D-US-26-09-02-Workwear-WW.jpg?v=1788266924&width=800" />
+          <img src="https://www.tedbaker.com/cdn/shop/files/M-US-26-09-02-Workwear-WW.jpg?v=1788266935&width=800" alt="Back to Work — shop women's workwear" width="800" height="1000" loading="lazy" />
+        </picture>
+      </a>
+      <a class="workwear-tile" href="#">
+        <picture>
+          <source media="(min-width: 768px)" srcset="https://www.tedbaker.com/cdn/shop/files/D-US-26-09-02-Workwear-MW.jpg?v=1788266924&width=800" />
+          <img src="https://www.tedbaker.com/cdn/shop/files/M-US-26-09-02-Workwear-MW.jpg?v=1788266935&width=800" alt="Office Wardrobe — shop men's workwear" width="800" height="1000" loading="lazy" />
+        </picture>
+      </a>
+    </section>
+
+    <!-- === Section: Workwear favorites grid === -->
+    <section class="favorites" aria-labelledby="favorites-heading">
+      <h2 id="favorites-heading">Workwear Favorites</h2>
+      <ul class="favorites-grid">
+        <li><a href="#"><img src="https://www.tedbaker.com/cdn/shop/files/ONEIDA.jpg?v=1788424896&width=800" alt="Button-front knit cardigan, camel" width="800" height="1000" loading="lazy" /></a></li>
+        <li><a href="#"><img src="https://www.tedbaker.com/cdn/shop/files/282071_CAMEL_2_d823a091-dc0c-4224-bb94-9a75d8544607.jpg?v=1785755218&width=800" alt="Sleeveless ribbed knit top, camel" width="800" height="1000" loading="lazy" /></a></li>
+        <li><a href="#"><img src="https://www.tedbaker.com/cdn/shop/files/2036312_272_BITTER-CHOCOLATE_C4.jpg?v=1778508969&width=800" alt="Wide leg tailored trousers, oatmeal" width="800" height="1000" loading="lazy" /></a></li>
+        <li><a href="#"><img src="https://www.tedbaker.com/cdn/shop/files/2036971_078_LT-HTHR-GREY_C2.jpg?v=1778508967&width=800" alt="Short sleeve knit polo shirt, rust" width="800" height="1000" loading="lazy" /></a></li>
+        <li><a href="#"><img src="https://www.tedbaker.com/cdn/shop/files/TIRVIN2.jpg?v=1788362528&width=800" alt="Tailored blazer, taupe" width="800" height="1000" loading="lazy" /></a></li>
+        <li><a href="#"><img src="https://www.tedbaker.com/cdn/shop/files/281238_BLACK_1.jpg?v=1773741338&width=800" alt="Slim fit trousers, black" width="800" height="1000" loading="lazy" /></a></li>
+        <li><a href="#"><img src="https://www.tedbaker.com/cdn/shop/files/285114_NAVY_1.jpg?v=1781712095&width=800" alt="Structured tote bag, navy" width="800" height="1000" loading="lazy" /></a></li>
+        <li><a href="#"><img src="https://www.tedbaker.com/cdn/shop/files/286016_MAROON_1.jpg?v=1781282356&width=800" alt="Wool blend Harrington jacket, maroon" width="800" height="1000" loading="lazy" /></a></li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- === Section: Footer === -->
+  <footer class="site-footer">
+    <div class="footer-columns">
+      <div class="footer-col">
+        <h2>Ted Baker</h2>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Womenswear</a></li>
+          <li><a href="#">Menswear</a></li>
+          <li><a href="#">Sale</a></li>
+          <li><a href="#">Outlet</a></li>
+          <li><a href="#">Gifting</a></li>
+          <li><a href="#">Gift Card</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2>Customer Service</h2>
+        <ul>
+          <li><a href="#">Help &amp; FAQs</a></li>
+          <li><a href="#">Delivery &amp; Returns</a></li>
+          <li><a href="#">Customer Service</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Track My Order</a></li>
+          <li><a href="#">Size Guide</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2>Legal</h2>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Returns Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-newsletter">
+        <h2>Sign Up For 15% Off</h2>
+        <p>Sign up to hear about our exclusive offers and enjoy 15% off your first order.</p>
+        <form action="#" onsubmit="return false;">
+          <label for="newsletterEmail">Email</label>
+          <div class="newsletter-input-row">
+            <input type="email" id="newsletterEmail" name="email" autocomplete="email" placeholder="Email" required />
+            <button type="submit">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <ul class="social-links">
+        <li><a href="#" aria-label="Ted Baker on Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a></li>
+        <li><a href="#" aria-label="Ted Baker on X"><i class="bi bi-twitter-x" aria-hidden="true"></i></a></li>
+        <li><a href="#" aria-label="Ted Baker on Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a></li>
+        <li><a href="#" aria-label="Ted Baker on Pinterest"><i class="bi bi-pinterest" aria-hidden="true"></i></a></li>
+        <li><a href="#" aria-label="Ted Baker on YouTube"><i class="bi bi-youtube" aria-hidden="true"></i></a></li>
+      </ul>
+
+      <ul class="payment-icons" aria-hidden="true">
+        <li><i class="bi bi-credit-card"></i></li>
+        <li><i class="bi bi-apple"></i></li>
+        <li><i class="bi bi-google"></i></li>
+        <li><i class="bi bi-paypal"></i></li>
+      </ul>
+
+      <p class="copyright">
+        Ted Baker™ is a trademark of ABG-TB (PCO) LLC. © 2026 ABG-TB (PCO) LLC. All Rights Reserved.<br />
+        Learning exercise, not affiliated with Ted Baker.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap bundle: powers navbar collapse, offcanvas and dropdown only. No custom JS. -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
