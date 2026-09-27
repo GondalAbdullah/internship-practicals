@@ -1,22 +1,17 @@
 {
-  "outputStyle": "Explanatory",
+  "outputStyle": "Concise",
   "permissions": {
+    "defaultMode": "acceptEdits",
     "allow": [
       "WebFetch(domain:www.tedbaker.com)",
       "WebFetch(domain:getbootstrap.com)",
-      "WebFetch(domain:icons.getbootstrap.com)"
-    ],
-    "ask": [
-      "Bash(git commit *)"
+      "WebFetch(domain:icons.getbootstrap.com)",
+      "WebFetch(domain:www.jsdelivr.com)",
+      "WebFetch(domain:fonts.google.com)"
     ],
     "deny": [
-      "Bash(git push *)",
-      "Bash(git reset *)",
-      "Bash(git checkout *)",
-      "Bash(git switch *)",
-      "Bash(git rebase *)",
-      "Bash(git merge *)",
-      "Bash(rm *)",
+      "Bash(git *)",
+      "Bash(rm -rf *)",
       "Bash(npm *)",
       "Bash(npx *)"
     ]
