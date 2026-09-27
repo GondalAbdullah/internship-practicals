@@ -4,7 +4,7 @@ Tick a box only after you can explain the change out loud.
 Commit at every 💾.
 
 ## 0. Setup and study — 45 min
-- [ ] On the feature branch, open ONLY `day-03/tedbaker-test` as the Cursor workspace
+- [ ] On the feature branch, Claude Code with project rules in `CLAUDE.md` and `.claude/`
 - [ ] Screenshot tedbaker.com at 375, 768, 1024, 1440px → `docs/screenshots/`
 - [ ] DevTools: note the colors, font families, base font size and max content width
       → write them into `css/tokens.css` as custom properties (you write this file)

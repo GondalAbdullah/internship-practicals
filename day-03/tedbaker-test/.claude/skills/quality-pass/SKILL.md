@@ -1,4 +1,10 @@
-Audit the whole page against the Definition of Done in AGENTS.md. Do NOT edit files.
+---
+description: Audit the whole page against the definition of done without editing
+disable-model-invocation: true
+allowed-tools: Read Grep
+---
+Audit index.html and the CSS files against the Definition of Done in CLAUDE.md.
+Do NOT edit files.
 
 Check and report per section:
 - semantic structure and heading order

@@ -1,10 +1,11 @@
 ---
-description: Semantic and accessible HTML rules (handbook Day 2)
-globs: "**/*.html"
-alwaysApply: false
+paths:
+  - "**/*.html"
 ---
+# Semantic, accessible HTML (handbook Day 2)
+
 - Landmarks: one <header>, <nav> for navigation, one <main id="main-content">, <footer>.
-  Include a "Skip to content" link as the first focusable element.
+  A "Skip to content" link is the first focusable element.
 - Exactly one <h1> (the hero headline). Never skip heading levels. Choose levels by
   structure, never by font size.
 - Links (<a href>) navigate; buttons (<button type="button">) act. Wishlist, search
