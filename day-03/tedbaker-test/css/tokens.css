@@ -1,0 +1,68 @@
+/* ==========================================================================
+   Design tokens — Ted Baker homepage clone
+   Every color, font, spacing and radius value used in main.css comes from
+   a custom property defined here. Nothing in main.css is hard-coded.
+   ========================================================================== */
+
+:root {
+  /* --- Color: neutrals --- */
+  --color-white: #ffffff;
+  --color-ink: #1a1a1a;
+  --color-body: #333333;
+  --color-grey-mid: #6b6b6b;
+  --color-grey-light: #999999;
+  --color-border: #e2e0dc;
+  --color-bg-footer: #f5f4f1;
+  --color-bg-tile: #ece7e0;
+
+  /* --- Color: brand --- */
+  --color-maroon: #6d2430;
+  --color-maroon-dark: #591d27;
+  --color-gold: #c9a24b;
+  --color-sale-red: #c8102e;
+
+  /* --- Color: semantic aliases --- */
+  --color-bg: var(--color-white);
+  --color-text: var(--color-body);
+  --color-heading: var(--color-ink);
+  --color-link: var(--color-ink);
+  --color-focus-ring: #2563c4;
+
+  /* --- Fonts --- */
+  --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans: "Jost", "Helvetica Neue", Arial, sans-serif;
+  --font-script: "Yellowtail", "Brush Script MT", cursive;
+
+  /* --- Type scale (fluid, clamp() = min, preferred, max) --- */
+  --text-xs: clamp(0.7rem, 0.68rem + 0.1vw, 0.75rem);
+  --text-sm: clamp(0.8rem, 0.78rem + 0.1vw, 0.875rem);
+  --text-base: clamp(0.9375rem, 0.92rem + 0.1vw, 1rem);
+  --text-md: clamp(1.05rem, 1rem + 0.3vw, 1.25rem);
+  --text-lg: clamp(1.25rem, 1.1rem + 0.7vw, 1.75rem);
+  --text-xl: clamp(1.75rem, 1.4rem + 1.5vw, 2.75rem);
+  --text-2xl: clamp(2.25rem, 1.7rem + 2.5vw, 4rem);
+
+  /* --- Letter spacing --- */
+  --tracking-wide: 0.08em;
+  --tracking-wider: 0.15em;
+
+  /* --- Spacing scale --- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  /* --- Layout --- */
+  --container-max: 1440px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+
+  /* --- Motion --- */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+}

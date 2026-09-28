@@ -1,0 +1,65 @@
+{
+  "customers": [
+    { "id": "c1", "name": "Ayesha Khan", "city": "Lahore" },
+    { "id": "c2", "name": "Bilal Ahmed", "city": "Karachi" },
+    { "id": "c3", "name": "Sana Malik", "city": "Islamabad" },
+    { "id": "c4", "name": "Usman Tariq", "city": "Lahore" },
+    { "id": "c5", "name": "Hira Siddiqui", "city": "Faisalabad" },
+    { "id": "c6", "name": "Fahad Raza", "city": "Multan" }
+  ],
+  "products": [
+    { "id": "p1", "name": "Wireless Mouse", "category": "electronics", "price": 2500 },
+    { "id": "p2", "name": "USB-C Charger", "category": "electronics", "price": 3200 },
+    { "id": "p3", "name": "Mechanical Keyboard", "category": "electronics", "price": 12000 },
+    { "id": "p4", "name": "Clean Code", "category": "books", "price": 4500 },
+    { "id": "p5", "name": "The Pragmatic Programmer", "category": "books", "price": 5200 },
+    { "id": "p6", "name": "Basmati Rice 5kg", "category": "grocery", "price": 1850 },
+    { "id": "p7", "name": "Green Tea 100 Bags", "category": "grocery", "price": 950 },
+    { "id": "p8", "name": "Cotton Kurta", "category": "clothing", "price": 3800 }
+  ],
+  "orders": [
+    { "id": "o1", "customerId": "c1", "date": "2026-07-03", "status": "completed", "items": [
+      { "productId": "p1", "quantity": 1, "unitPrice": 2500 },
+      { "productId": "p7", "quantity": 2, "unitPrice": 950 }
+    ] },
+    { "id": "o2", "customerId": "c2", "date": "2026-07-09", "status": "completed", "items": [
+      { "productId": "p4", "quantity": 1, "unitPrice": 4500 },
+      { "productId": "p5", "quantity": 1, "unitPrice": 5200 }
+    ] },
+    { "id": "o3", "customerId": "c3", "date": "2026-07-15", "status": "completed", "items": [
+      { "productId": "p6", "quantity": 2, "unitPrice": 1850 },
+      { "productId": "p7", "quantity": 3, "unitPrice": 950 }
+    ] },
+    { "id": "o4", "customerId": "c1", "date": "2026-07-28", "status": "cancelled", "items": [
+      { "productId": "p3", "quantity": 1, "unitPrice": 12000 }
+    ] },
+    { "id": "o5", "customerId": "c4", "date": "2026-08-02", "status": "completed", "items": [
+      { "productId": "p8", "quantity": 2, "unitPrice": 3800 }
+    ] },
+    { "id": "o6", "customerId": "c2", "date": "2026-08-11", "status": "completed", "items": [
+      { "productId": "p2", "quantity": 1, "unitPrice": 3200 },
+      { "productId": "p1", "quantity": 1, "unitPrice": 2500 }
+    ] },
+    { "id": "o7", "customerId": "c5", "date": "2026-08-19", "status": "completed", "items": [
+      { "productId": "p7", "quantity": 4, "unitPrice": 950 }
+    ] },
+    { "id": "o8", "customerId": "c3", "date": "2026-08-30", "status": "completed", "items": [
+      { "productId": "p4", "quantity": 1, "unitPrice": 4500 }
+    ] },
+    { "id": "o9", "customerId": "c1", "date": "2026-09-04", "status": "completed", "items": [
+      { "productId": "p3", "quantity": 1, "unitPrice": 12000 },
+      { "productId": "p2", "quantity": 2, "unitPrice": 3200 }
+    ] },
+    { "id": "o10", "customerId": "c4", "date": "2026-09-10", "status": "completed", "items": [
+      { "productId": "p6", "quantity": 1, "unitPrice": 1850 },
+      { "productId": "p7", "quantity": 1, "unitPrice": 950 }
+    ] },
+    { "id": "o11", "customerId": "c5", "date": "2026-09-17", "status": "completed", "items": [
+      { "productId": "p8", "quantity": 1, "unitPrice": 3800 },
+      { "productId": "p5", "quantity": 1, "unitPrice": 5200 }
+    ] },
+    { "id": "o12", "customerId": "c2", "date": "2026-09-25", "status": "completed", "items": [
+      { "productId": "p7", "quantity": 2, "unitPrice": 950 }
+    ] }
+  ]
+}
