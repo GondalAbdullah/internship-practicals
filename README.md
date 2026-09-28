@@ -11,6 +11,8 @@ This document states what I have been learning and practicing during the first 1
 |-----|-------|--------|
 | 1 | How the web works, Git, setup | ✅ |
 | 2 | HTML | ✅ |
+| 3 | CSS | ✅ |
+| 4 | Javascript | ✅ |
 
 ## Structure
 - `docs/` — written notes and reports
