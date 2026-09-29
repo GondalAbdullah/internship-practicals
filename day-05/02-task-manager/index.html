@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Day 5 · Task Manager</title>
+    <meta name="description" content="Day 5 Task 2: a state-driven task manager persisted to localStorage.">
+    <link rel="stylesheet" href="../shared/base.css">
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="js/app.js"></script>
+  </head>
+  <body>
+    <div class="container container--narrow">
+      <a class="back-link" href="../index.html">← Day 5 overview</a>
+      <header class="page-header">
+        <h1>Tasks</h1>
+        <p>Add, edit, complete, delete and filter. Your tasks are saved in this browser and restored
+          when you reload.</p>
+      </header>
+
+      <main class="panel">
+        <p id="storage-warning" class="banner banner--error" role="alert" hidden>
+          Changes can't be saved in this browser (storage is full or disabled). They will be lost
+          when you close the page.
+        </p>
+
+        <form id="task-form" class="add-form" novalidate>
+          <label for="task-title">New task</label>
+          <div class="add-form__row">
+            <input id="task-title" name="title" type="text" autocomplete="off"
+              aria-describedby="task-error" aria-invalid="false">
+            <button type="submit" class="btn-primary">Add</button>
+          </div>
+          <p id="task-error" class="field-error" role="alert"></p>
+        </form>
+
+        <div class="toolbar">
+          <div id="filters" class="filters" role="group" aria-label="Show tasks">
+            <button type="button" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" data-filter="active" aria-pressed="false">Active</button>
+            <button type="button" data-filter="done" aria-pressed="false">Done</button>
+          </div>
+          <p id="summary" class="summary" aria-live="polite"></p>
+        </div>
+
+        <ul id="task-list" class="task-list"></ul>
+        <p id="empty-state" class="empty-state" hidden></p>
+
+        <div class="footer-actions">
+          <button type="button" id="clear-done" class="btn-small" hidden>Clear completed</button>
+        </div>
+      </main>
+
+      <p class="hint shortcuts">Tip: press <kbd>Enter</kbd> to save an edit and <kbd>Esc</kbd> to cancel it.</p>
+    </div>
+  </body>
+</html>

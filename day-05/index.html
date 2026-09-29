@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Day 5 · JavaScript in the Browser</title>
+    <meta name="description" content="Technier internship Day 5: DOM, events and asynchronous JavaScript.">
+    <link rel="stylesheet" href="shared/base.css">
+    <style>
+      .tasks {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: var(--space-4);
+      }
+
+      .tasks a {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .tasks a:hover .panel {
+        border-color: var(--color-primary);
+      }
+
+      .tasks h2 {
+        font-size: 1.15rem;
+        color: var(--color-primary);
+      }
+
+      .tasks p {
+        margin: 0;
+        color: var(--color-muted);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="page-header">
+        <h1>Day 5: JavaScript in the browser</h1>
+        <p>DOM, events and asynchronous code: reading and changing the page, responding to users,
+          and handling data that arrives later.</p>
+      </header>
+
+      <main>
+        <ul class="tasks">
+          <li>
+            <a href="01-dom-drills/index.html">
+              <article class="panel">
+                <h2>Task 1: DOM drills</h2>
+                <p>Restyle every second table row, build a list from data, remove cards through event
+                  delegation, and hand-built tabs and accordion.</p>
+              </article>
+            </a>
+          </li>
+          <li>
+            <a href="02-task-manager/index.html">
+              <article class="panel">
+                <h2>Task 2: Interactive task manager</h2>
+                <p>Add, edit, complete, delete and filter. State persisted to localStorage, inline
+                  validation, and one render function derived from state.</p>
+              </article>
+            </a>
+          </li>
+          <li>
+            <a href="03-live-data/index.html">
+              <article class="panel">
+                <h2>Task 3: Live data application</h2>
+                <p>A public API with loading, empty, success and error states, retry, debounced
+                  search, cancelled stale requests, pagination and a detail view.</p>
+              </article>
+            </a>
+          </li>
+        </ul>
+      </main>
+    </div>
+  </body>
+</html>

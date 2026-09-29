@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Day 5 · DOM Drills</title>
+    <meta name="description" content="Day 5 Task 1: selecting, building, delegating and composing UI with plain DOM APIs.">
+    <link rel="stylesheet" href="../shared/base.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- type="module" scripts are deferred automatically: they run after the DOM is parsed. -->
+    <script type="module" src="drills.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <a class="back-link" href="../index.html">← Day 5 overview</a>
+      <header class="page-header">
+        <h1>DOM drills</h1>
+        <p>Four short exercises in plain JavaScript, with no library: selecting and restyling elements,
+          building a list from data, event delegation, and two small components.</p>
+      </header>
+
+      <main class="drills">
+        <!-- Drill 1 -->
+        <section class="panel drill" aria-labelledby="drill-1-title">
+          <h2 id="drill-1-title">1. Restyle every second row</h2>
+          <p class="hint">Uses <code>querySelectorAll('tbody tr:nth-child(even)')</code> and
+            <code>classList.toggle</code>, so styling stays in CSS.</p>
+          <button type="button" id="stripe-toggle" aria-pressed="false">Stripe rows</button>
+
+          <div class="table-wrap">
+            <table id="orders-table">
+              <caption>Recent orders</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Order</th>
+                  <th scope="col">Customer</th>
+                  <th scope="col">Status</th>
+                  <th scope="col" class="num">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>#1041</td><td>Ayesha Khan</td><td>Delivered</td><td class="num">Rs 4,250</td></tr>
+                <tr><td>#1042</td><td>Bilal Ahmed</td><td>Processing</td><td class="num">Rs 1,120</td></tr>
+                <tr><td>#1043</td><td>Sara Malik</td><td>Delivered</td><td class="num">Rs 7,980</td></tr>
+                <tr><td>#1044</td><td>Usman Tariq</td><td>Cancelled</td><td class="num">Rs 650</td></tr>
+                <tr><td>#1045</td><td>Hina Raza</td><td>Shipped</td><td class="num">Rs 3,300</td></tr>
+                <tr><td>#1046</td><td>Omar Farooq</td><td>Processing</td><td class="num">Rs 2,045</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Drill 2 -->
+        <section class="panel drill" aria-labelledby="drill-2-title">
+          <h2 id="drill-2-title">2. Build a list from an array of objects</h2>
+          <p class="hint">Each item is created with <code>createElement</code> and filled with
+            <code>textContent</code> (never <code>innerHTML</code>), then inserted in one batch.</p>
+          <p id="team-summary" class="summary"></p>
+          <ul id="team-list" class="team-list"></ul>
+        </section>
+
+        <!-- Drill 3 -->
+        <section class="panel drill" aria-labelledby="drill-3-title">
+          <h2 id="drill-3-title">3. A button that removes its own card</h2>
+          <p class="hint">One click listener on the grid handles every card, including cards added
+            after the page loaded. That is event delegation.</p>
+          <button type="button" id="add-card" class="btn-primary">Add a card</button>
+          <p id="cards-empty" class="empty" hidden>All cards removed. Add one to try again.</p>
+          <div id="card-grid" class="card-grid"></div>
+        </section>
+
+        <!-- Drill 4 -->
+        <section class="panel drill" aria-labelledby="drill-4-title">
+          <h2 id="drill-4-title">4. Tabs and an accordion</h2>
+          <p class="hint">Tabs support arrow keys, Home and End. State lives in ARIA attributes,
+            and CSS reads them.</p>
+
+          <div class="tabs">
+            <div role="tablist" aria-label="Programme phases" id="phase-tabs" class="tabs__list">
+              <button type="button" role="tab" id="tab-foundation" aria-controls="panel-foundation"
+                aria-selected="true">Foundation</button>
+              <button type="button" role="tab" id="tab-programming" aria-controls="panel-programming"
+                aria-selected="false" tabindex="-1">Programming</button>
+              <button type="button" role="tab" id="tab-server" aria-controls="panel-server"
+                aria-selected="false" tabindex="-1">Server side</button>
+            </div>
+            <div role="tabpanel" id="panel-foundation" aria-labelledby="tab-foundation" tabindex="0"
+              class="tabs__panel">
+              <p><strong>Days 1–3.</strong> How the web works, Git, semantic HTML and responsive CSS.</p>
+            </div>
+            <div role="tabpanel" id="panel-programming" aria-labelledby="tab-programming" tabindex="0"
+              class="tabs__panel" hidden>
+              <p><strong>Days 4–5.</strong> The JavaScript language, then the DOM, events and async code.</p>
+            </div>
+            <div role="tabpanel" id="panel-server" aria-labelledby="tab-server" tabindex="0"
+              class="tabs__panel" hidden>
+              <p><strong>Days 6–8.</strong> HTTP and REST, backend routing and auth, and databases.</p>
+            </div>
+          </div>
+
+          <h3 class="accordion-title">Frequently asked</h3>
+          <div class="accordion" id="faq">
+            <h4 class="accordion__heading">
+              <button type="button" class="accordion__trigger" aria-expanded="false" aria-controls="faq-1">
+                What is the difference between the DOM and the HTML file?
+              </button>
+            </h4>
+            <div id="faq-1" class="accordion__panel" hidden>
+              <p>The HTML file is text sent by the server. The DOM is the live tree of objects the browser
+                builds from it, which JavaScript can change without touching the file.</p>
+            </div>
+
+            <h4 class="accordion__heading">
+              <button type="button" class="accordion__trigger" aria-expanded="false" aria-controls="faq-2">
+                Why use event delegation?
+              </button>
+            </h4>
+            <div id="faq-2" class="accordion__panel" hidden>
+              <p>One listener on a stable parent handles clicks for every child, including children added
+                later, because events bubble up the tree.</p>
+            </div>
+
+            <h4 class="accordion__heading">
+              <button type="button" class="accordion__trigger" aria-expanded="false" aria-controls="faq-3">
+                Why not insert data with innerHTML?
+              </button>
+            </h4>
+            <div id="faq-3" class="accordion__panel" hidden>
+              <p>innerHTML parses its input as markup, so user-supplied text can execute script (XSS).
+                textContent always treats the value as plain text.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
