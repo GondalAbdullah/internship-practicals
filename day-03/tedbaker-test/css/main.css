@@ -261,6 +261,9 @@ input:focus-visible,
 .nav-sale {
   color: var(--color-sale-red);
 }
+.nav-outlet {
+  color: var(--color-outlet-red);
+}
 .nav-chevron {
   font-size: 0.6rem;
   margin-left: var(--space-1);
@@ -269,8 +272,11 @@ input:focus-visible,
 
 /* Mega-menu: CSS-only (hover / focus-within), no JS required.
    Kept separate from Bootstrap's dropdown component so it can span full width
-   without fighting Popper's inline positioning. */
-.nav-item-mega {
+   without fighting Popper's inline positioning.
+   Specificity: ".main-nav .nav-item-mega" (0,2,0) must beat ".main-nav li"
+   (0,1,1) above, or the li's position:relative becomes the containing block
+   for .mega-menu's inset-inline:0 and the panel renders sliver-thin. */
+.main-nav .nav-item-mega {
   position: static;
 }
 .mega-menu {
@@ -282,13 +288,29 @@ input:focus-visible,
   border-top: 1px solid var(--color-border);
   box-shadow: 0 12px 24px rgb(0 0 0 / 0.08);
   padding: var(--space-6);
-  grid-template-columns: repeat(5, 1fr);
   gap: var(--space-6);
   z-index: 20;
+  overflow: hidden;
 }
 .nav-item-mega:hover .mega-menu,
 .nav-item-mega:focus-within .mega-menu {
+  display: flex;
+}
+.mega-menu-links {
+  flex: 3;
+  min-width: 0;
   display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+/* Narrower menus (Gifts, Sale, Outlet) have only 1-2 link columns, so they
+   shouldn't stretch to fill the same 3-of-5 share as the full 4-column menus. */
+.mega-menu-links--narrow {
+  flex: 0 0 auto;
+  grid-template-columns: repeat(2, minmax(0, 12rem));
+}
+.mega-menu-col {
+  min-width: 0;
 }
 .mega-menu-col h2 {
   font-family: var(--font-sans);
@@ -298,6 +320,25 @@ input:focus-visible,
   text-transform: uppercase;
   color: var(--color-grey-mid);
   margin-bottom: var(--space-3);
+}
+.mega-menu-col h2.mega-menu-col-heading--stacked {
+  margin-top: var(--space-5);
+}
+.mega-menu-col h2 a {
+  border-bottom: none;
+  color: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+/* Sale/Outlet menus: only the column headings are colored, sub-links stay the
+   default text color (matches the real site's inline styling on level-2 links only). */
+.mega-menu--sale .mega-menu-col h2 {
+  color: var(--color-sale-red);
+}
+.mega-menu--outlet .mega-menu-col h2 {
+  color: var(--color-outlet-red);
 }
 .mega-menu-col ul {
   list-style: none;
@@ -316,6 +357,41 @@ input:focus-visible,
 }
 .mega-menu-col a:hover {
   color: var(--color-maroon);
+}
+
+/* Gallery pane: 2x2 image grid with a caption overlay per tile. */
+.mega-menu-gallery {
+  flex: 2;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.mega-menu-gallery a {
+  position: relative;
+  display: block;
+}
+.mega-menu-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+.mega-menu-gallery span {
+  position: absolute;
+  left: var(--space-3);
+  bottom: var(--space-3);
+  right: var(--space-3);
+  color: var(--color-white);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  text-shadow: 0 1px 4px rgb(0 0 0 / 0.5);
 }
 
 /* Offcanvas mobile nav: override Bootstrap via its --bs-* variables, no !important */
