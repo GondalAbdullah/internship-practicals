@@ -1,0 +1,216 @@
+.drills {
+  display: grid;
+  gap: var(--space-5);
+}
+
+/* Grid items default to min-width: auto, so the wide table would stretch the whole column
+   and cause horizontal page scroll on phones. min-width: 0 lets .table-wrap scroll instead. */
+.drills > * {
+  min-width: 0;
+}
+
+.drill > button {
+  margin-bottom: var(--space-4);
+}
+
+.summary {
+  color: var(--color-muted);
+}
+
+.empty {
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+/* ---------- Drill 1: table ---------- */
+
+.table-wrap {
+  overflow-x: auto; /* the table scrolls inside its box on narrow screens, never the page */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 28rem;
+}
+
+caption {
+  text-align: left;
+  font-weight: 600;
+  padding-bottom: var(--space-2);
+}
+
+th,
+td {
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+th {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+tr.is-striped {
+  background: var(--color-highlight);
+}
+
+/* ---------- Drill 2: team list ---------- */
+
+.team-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.team-list__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.team-list__role,
+.team-list__joined {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.team-list__joined {
+  margin-left: auto;
+}
+
+.team-list__item.is-inactive {
+  opacity: 0.7;
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0 var(--space-2);
+  border-radius: 999px;
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+}
+
+/* ---------- Drill 3: cards ---------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 12rem), 1fr));
+  gap: var(--space-3);
+}
+
+.card {
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface-muted);
+  animation: card-in 200ms ease-out;
+}
+
+.card__title {
+  font-size: 1rem;
+}
+
+.card p {
+  color: var(--color-muted);
+  font-size: 0.875rem;
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+/* ---------- Drill 4: tabs ---------- */
+
+.tabs__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  border-bottom: 1px solid var(--color-border);
+}
+
+[role="tab"] {
+  border: 1px solid transparent;
+  border-bottom: 0;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  background: transparent;
+  color: var(--color-muted);
+  margin-bottom: -1px;
+}
+
+/* CSS reads the ARIA state that JavaScript sets, so there is one source of truth. */
+[role="tab"][aria-selected="true"] {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.tabs__panel {
+  padding: var(--space-4) var(--space-1);
+}
+
+/* ---------- Drill 4: accordion ---------- */
+
+.accordion-title {
+  margin-top: var(--space-5);
+  font-size: 1.1rem;
+}
+
+.accordion {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.accordion__heading {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.accordion__heading:not(:first-child),
+.accordion__panel {
+  border-top: 1px solid var(--color-border);
+}
+
+.accordion__trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  text-align: left;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: var(--space-3) var(--space-4);
+  font-weight: 600;
+}
+
+.accordion__trigger::after {
+  content: "+";
+  font-weight: 400;
+}
+
+.accordion__trigger[aria-expanded="true"]::after {
+  content: "−";
+}
+
+.accordion__panel {
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-muted);
+}

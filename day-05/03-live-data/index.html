@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Day 5 · Product Finder</title>
+    <meta name="description" content="Day 5 Task 3: a live-data app that handles loading, empty, success and error states.">
+    <link rel="preconnect" href="https://dummyjson.com">
+    <link rel="stylesheet" href="../shared/base.css">
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="js/app.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <a class="back-link" href="../index.html">← Day 5 overview</a>
+      <header class="page-header">
+        <h1>Product finder</h1>
+        <p>Live data from the public <a href="https://dummyjson.com/docs/products">DummyJSON products API</a>.
+          Search as you type, page through results, and open any product for details.</p>
+      </header>
+
+      <main>
+        <form id="search-form" class="search" role="search">
+          <label for="search">Search products</label>
+          <div class="search__row">
+            <input id="search" name="q" type="search" autocomplete="off" spellcheck="false"
+              aria-describedby="search-hint">
+            <button type="submit" class="btn-primary">Search</button>
+          </div>
+          <p id="search-hint" class="hint">Results update as you type. Press <kbd>/</kbd> to jump here.</p>
+        </form>
+
+        <details class="dev-tools">
+          <summary>Testing tools</summary>
+          <label class="dev-tools__option">
+            <input type="checkbox" id="simulate-failure">
+            Make list requests fail (to see the error state and Retry)
+          </label>
+          <p class="hint">Also try DevTools → Network → <strong>Offline</strong> or <strong>Slow 4G</strong>,
+            and type quickly to watch older requests get cancelled.</p>
+        </details>
+
+        <section class="results" aria-labelledby="results-heading">
+          <div class="results__header">
+            <h2 id="results-heading" tabindex="-1">Results</h2>
+            <p id="summary" class="summary" aria-live="polite"></p>
+          </div>
+
+          <p id="loading" class="state state--loading" role="status" hidden>
+            <span class="spinner" aria-hidden="true"></span>Loading products…
+          </p>
+
+          <div id="error" class="state state--error" role="alert" hidden>
+            <p id="error-message"></p>
+            <button type="button" id="retry">Try again</button>
+          </div>
+
+          <p id="empty" class="state state--empty" hidden></p>
+
+          <ul id="results" class="product-grid" hidden></ul>
+
+          <nav id="pagination" class="pagination" aria-label="Result pages" hidden>
+            <button type="button" id="prev">← Previous</button>
+            <span id="page-info" class="pagination__info"></span>
+            <button type="button" id="next">Next →</button>
+          </nav>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="detail" class="detail" aria-labelledby="detail-title">
+      <div class="detail__header">
+        <h2 id="detail-title">Product details</h2>
+        <button type="button" id="detail-close" class="detail__close" aria-label="Close details">×</button>
+      </div>
+      <div id="detail-body" class="detail__body"></div>
+    </dialog>
+  </body>
+</html>

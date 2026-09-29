@@ -13,6 +13,8 @@ This document states what I have been learning and practicing during the first 1
 | 2 | HTML | ✅ |
 | 3 | CSS | ✅ |
 | 4 | Javascript | ✅ |
+| 5 | DOM Manipulation | ✅ |
+
 
 ## Structure
 - `docs/` — written notes and reports

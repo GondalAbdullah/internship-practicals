@@ -1,0 +1,14 @@
+{
+  "name": "day-05",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Technier internship Day 5: DOM, events and asynchronous JavaScript in the browser.",
+  "type": "module",
+  "scripts": {
+    "start": "npx --yes serve@14 . -l 5500",
+    "test": "node --test tests/*.test.js"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
